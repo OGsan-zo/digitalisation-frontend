@@ -36,6 +36,29 @@ export interface News {
   createdAt: Date
   updatedAt: Date
 }
+export interface Contact {
+  adresse: string;
+  email: string;
+  telephone?: string; // "?" signifie optionnel
+}
+
+// Structure de l'objet identité (basée sur votre JSON)
+export interface Identite {
+  id: number;
+  nom: string;
+  prenom: string;
+  dateNaissance: string;
+  lieuNaissance: string;
+  sexe: string;
+  nationalite?: string;
+  contact: Contact;
+}
+export interface Formation {
+  formation: string;
+  formationType: string;
+  niveau: string;
+  mention: string;
+}
 
 // In-memory storage (replace with database)
 let users: User[] = [
