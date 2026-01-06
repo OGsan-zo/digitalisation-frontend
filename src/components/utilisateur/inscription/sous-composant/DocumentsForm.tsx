@@ -81,9 +81,9 @@ const DocumentsForm: React.FC<DocumentsFormProps> = ({
         <Button variant="outline" onClick={onBack}>
           Précédent
         </Button>
-        <Button onClick={onNext} className="bg-emerald-600 hover:bg-emerald-700">
+        {/* <Button onClick={onNext} className="bg-emerald-600 hover:bg-emerald-700">
           Suivant
-        </Button>
+        </Button> */}
       </div>
     </div>
   );

@@ -59,7 +59,43 @@ export interface Formation {
   niveau: string;
   mention: string;
 }
-
+export interface PaiementData {
+  refAdmin: string;
+  dateAdmin: string;
+  montantAdmin: string;
+  refPedag: string;
+  datePedag: string;
+  montantPedag: string;
+  montantEcolage?: string;
+  refEcolage?: string;
+  dateEcolage?: string;
+}
+export interface PaiementData {
+  refAdmin: string;
+  dateAdmin: string;
+  montantAdmin: string;
+  refPedag: string;
+  datePedag: string;
+  montantPedag: string;
+  montantEcolage?: string;
+  refEcolage?: string;
+  dateEcolage?: string;
+  passant?: boolean| string;
+}
+export interface InscriptionData {
+  refAdmin: string;
+  dateAdmin: string;
+  montantAdmin: string;
+  refPedag: string;
+  datePedag: string;
+  montantPedag: string;
+  montantEcolage?: string;
+  refEcolage?: string;
+  dateEcolage?: string;
+  idEtudiant:string;
+  typeFormation:string;
+  passant?:boolean
+}
 // In-memory storage (replace with database)
 let users: User[] = [
   {

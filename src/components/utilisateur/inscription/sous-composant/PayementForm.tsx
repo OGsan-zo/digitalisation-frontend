@@ -13,11 +13,11 @@ interface PaiementFormProps {
 }
 
 const PaiementForm: React.FC<PaiementFormProps> = ({ 
-  formData, 
-  updateData, 
-  parcoursType, 
-  onBack, 
-  onNext 
+  formData,
+  updateData,
+  parcoursType,
+  onBack,
+  onNext
 }) => {
   
   // Fonction pour gérer les changements d'input dynamiquement
@@ -29,11 +29,17 @@ const PaiementForm: React.FC<PaiementFormProps> = ({
   return (
     <div className="space-y-6 mt-6">
       <div className="space-y-6">
-        <h3 className="text-lg font-semibold text-foreground border-b pb-2">Détails du Règlement</h3>
+        <h3 className="text-lg font-semibold text-foreground border-b pb-2">Bordereaux de versement</h3>
         
-        <div className="bg-blue-50 text-blue-800 p-3 rounded-lg text-sm border border-blue-100">
-          Note : À partir de cette étape, les données de paiement seront enregistrées.
-        </div>
+       <div className="space-y-2">
+              <Label htmlFor="dateAdmin">Date du Paiement *</Label>
+              <Input 
+                id="passant" 
+                type="boolean" 
+                value={formData.passant} 
+                onChange={handleChange} 
+              />
+            </div>
 
         <div className="grid md:grid-cols-2 gap-6">
           {/* Droits Administratifs */}
@@ -47,6 +53,7 @@ const PaiementForm: React.FC<PaiementFormProps> = ({
                 onChange={handleChange} 
                 placeholder="Ex: PAY-ADMIN-XXXX" 
               />
+
             </div>
             <div className="space-y-2">
               <Label htmlFor="dateAdmin">Date du Paiement *</Label>
@@ -54,6 +61,15 @@ const PaiementForm: React.FC<PaiementFormProps> = ({
                 id="dateAdmin" 
                 type="date" 
                 value={formData.dateAdmin} 
+                onChange={handleChange} 
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="montantAdmin">Montant administratifs *</Label>
+              <Input 
+                id="montantAdmin" 
+                type="number" 
+                value={formData.montantAdmin} 
                 onChange={handleChange} 
               />
             </div>
@@ -73,11 +89,20 @@ const PaiementForm: React.FC<PaiementFormProps> = ({
             </div>
             <div className="space-y-2">
               <Label htmlFor="datePedag">Date du Paiement *</Label>
-              <Input 
-                id="datePedag" 
+              <Input
+                id="datePedag"
                 type="date" 
                 value={formData.datePedag} 
                 onChange={handleChange} 
+              />
+            </div>
+             <div className="space-y-2">
+              <Label htmlFor="montantPedag">Montant pedagogique *</Label>
+              <Input
+                id="montantPedag"
+                type="number"
+                value={formData.montantPedag} 
+                onChange={handleChange}
               />
             </div>
           </div>

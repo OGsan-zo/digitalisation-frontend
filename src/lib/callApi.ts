@@ -79,8 +79,8 @@ export async function callApiPost(
       return NextResponse.json(
         {
           status: "error",
-          message: "Champs requis manquants : " + missingFields.join(", "),
-          error: "Champs requis manquants : " + missingFields.join(", "),
+          message: "Champs requis manquants ou vide : " + missingFields.join(", "),
+          error: "Champs requis manquants ou vide : " + missingFields.join(", "),
           missingFields,
         },
         { status: 400 }
